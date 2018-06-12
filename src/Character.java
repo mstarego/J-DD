@@ -16,6 +16,7 @@ public abstract class Character {
 	public ArrayList<Item> inventory;
 	
 	public Character() {
+		// Test comment
 		xPos = 2.5;
 		yPos = 2.5;
 		health = 0;
