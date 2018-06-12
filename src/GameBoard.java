@@ -11,7 +11,6 @@ private static final int WIDTH = 615;
 private static final int HEIGHT = 615;
 public static JFrame frame;
 private Player p1;
-private Die d6;
 private Die d25;
 private Die d50;
 public Monster m;
@@ -54,9 +53,7 @@ public static ArrayList<Space> spaces = new ArrayList<Space>();
 					if(space.contains(new Point2D.Double(e.getX(), e.getY()))) {
 						p1.setXPos(space.getXCenter());
 						p1.setYPos(space.getYCenter());
-						if(space.undiscovered) {
-							
-						}
+					
 						
 					}
 					
