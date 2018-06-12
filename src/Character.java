@@ -223,16 +223,17 @@ public abstract class Character {
 		}
 		return null;
 	}
-	public void attack(Character enemy) {
-		double dmg = getStrength();
-		damage(dmg, enemy);
-		
-	}	
+//	public void attack(Character enemy) {
+//		double dmg = getStrength();
+//		damage(dmg, enemy);
+//		
+//	}	
+//	public void damage(double damageDealt, Character enemy) {
+//		double realDamage = damageDealt - enemy.getConstitution() / 3.0;
+//		enemy.decreaseHealth(realDamage);
+//	}
 	public abstract void ability();
-	public void damage(double damageDealt, Character enemy) {
-		double realDamage = damageDealt - enemy.getConstitution() / 3.0;
-		enemy.decreaseHealth(realDamage);
-	}
+
 	//move to player
 	public boolean isTraversable(Space currentSpace) {
 		if(getDexterity() >= currentSpace.getDifficulty()) {

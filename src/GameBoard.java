@@ -55,14 +55,7 @@ public static ArrayList<Space> spaces = new ArrayList<Space>();
 						p1.setXPos(space.getXCenter());
 						p1.setYPos(space.getYCenter());
 						if(space.undiscovered) {
-							if(d6.roll() == 1) {
-								System.out.println("A monster spotted you");
-								m = new Monster(p1.getXPos(), p1.getYPos());
-								do {
-									p1.battle(m);
-									m.battle(p1);
-								}while(p1.battleInProgress);
-							}
+							
 						}
 						
 					}

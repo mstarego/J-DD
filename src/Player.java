@@ -241,25 +241,25 @@ public class Player extends Character {
 			+ getWisdom() + "\nCharisma: " + getCharisma());
 	}
 
-	public void battle(Monster enemy) {
-		battleInProgress = true;
-		System.out.println(getHealth() + "-" + enemy.getHealth() + "-" + getStrength() + "-" + enemy.getStrength());
-		attack(enemy);
-		System.out.println("Your Health: " + getHealth());
-		System.out.println("Enemy Health: " + enemy.getHealth());
-		if(getHealth() <= 0) {
-			battleInProgress = false;
-			GameBoard.frame.dispose();
-			System.out.println("You died:(");
-		}
-		else if(enemy.getHealth() <= 0) {
-			battleInProgress = false;
-			System.out.println("You defeated the monster");
-			System.out.println("The monster dropped " + enemy.getGoldBalance() + " gold");
-			increaseGoldBalance(enemy.getGoldBalance());
-			System.out.println(getGoldBalance());
-		}
-	}
+//	public void battle(Monster enemy) {
+//		battleInProgress = true;
+//		System.out.println(getHealth() + "-" + enemy.getHealth() + "-" + getStrength() + "-" + enemy.getStrength());
+//		attack(enemy);
+//		System.out.println("Your Health: " + getHealth());
+//		System.out.println("Enemy Health: " + enemy.getHealth());
+//		if(getHealth() <= 0) {
+//			battleInProgress = false;
+//			GameBoard.frame.dispose();
+//			System.out.println("You died:(");
+//		}
+//		else if(enemy.getHealth() <= 0) {
+//			battleInProgress = false;
+//			System.out.println("You defeated the monster");
+//			System.out.println("The monster dropped " + enemy.getGoldBalance() + " gold");
+//			increaseGoldBalance(enemy.getGoldBalance());
+//			System.out.println(getGoldBalance());
+//		}
+//	}
 
 
 
