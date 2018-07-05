@@ -242,5 +242,12 @@ public abstract class Character {
 	}
 	
 	
+	// Need a "look" method, so the player can look around at their surroundings.
+	// Would need a tie-in to the space the player currently occupies.  And would
+	// need an attibute to the particular space object with the description of the
+	// space.  Description would contain trees, grass, dirt, road, etc.  And would
+	// describe any objects that could be seen on the space.  It would also describe
+	// any monsters or NPC's that are currently occupying the space.  So there would
+	// need to be a way to tie-in a monster to the space also.
 	
 }

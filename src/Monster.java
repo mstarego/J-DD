@@ -16,7 +16,18 @@ public class Monster extends Character {
 
 
 	
+	// Retreat method, to try to escape
+	// Attack method
+	// Stand guard method, increased awareness of surroundings or maybe to 
+	//   protect someone or something.
 	
+	// Note:  There could be a way where you can befriend a monster?  Maybe
+	//        there could be a "disposition" or aggression attribute that determines
+	//        how friendly they are.  It could be incorporated into whether it will
+	//        attack or not.
+	
+	// Random note on monsters:  There should be a way to group them and do things
+	// as a group, like move together, attack, retreat, stand guard, etc.
 
 
 
@@ -33,7 +44,5 @@ public class Monster extends Character {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	public void battle(Player p) {
-		attack(p);
-	}
+	
 }

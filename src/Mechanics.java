@@ -31,7 +31,7 @@ public class Mechanics {
 		System.out.println("Enemy Health: " + enemy.getHealth());
 		if(player.getHealth() <= 0) {
 			battleInProgress = false;
-			GameBoard.frame.dispose();
+			DungeonsAndDragons.frame.dispose();
 			System.out.println("You died:(");
 		}
 		else if(enemy.getHealth() <= 0) {
