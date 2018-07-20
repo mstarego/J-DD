@@ -5,4 +5,5 @@ public class Battle {
 // to determine what it does in the fight.  Would have to check for keyboard input to determine if the player
 // retreats, casts a spell, switches weapons, etc.  Each monster and NPC would also get a turn for each of 
 // those actions also.
+// Testing git with this comment - master branch.
 }
