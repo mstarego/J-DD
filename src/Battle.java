@@ -9,4 +9,6 @@ public class Battle {
 // Testing git with this comment - master branch.
 //
 // Adding this line from github website.  See if it will pull down into Eclipse from Eclipse app.
+// 
+// A line added within the John-test-branch-1 branch.  This will be merged into master.
 }
