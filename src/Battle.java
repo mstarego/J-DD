@@ -8,4 +8,6 @@ public class Battle {
 //
 //	:)
 // local change to push to repo
+//
+// Johns change directly in github repo
 }
