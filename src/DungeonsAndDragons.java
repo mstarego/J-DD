@@ -1,20 +1,27 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class DungeonsAndDragons extends JPanel {
+import Player.Direction;
+
+public class DungeonsAndDragons extends JPanel implements KeyListener {
 	private static final int WIDTH = 615;
 	private static final int HEIGHT = 615;
 	public static JFrame frame;
 	private Player p1;
-
+	private GameBoard board;
+	
+	
+	
 	public DungeonsAndDragons() {
 		
 		p1 = new Player(Player.Race.DWARF, Player.Class.BARBARIAN);
-
+		board = new GameBoard();
 		
 	}
 
@@ -82,4 +89,39 @@ public void paint(Graphics g) {
 		g2d.fillRect((int)(p1.getXPos() - 5), (int)(p1.getYPos() - 5), 10, 10);
 
 		}
+
+addActionListener(new KeyListener{
+	public void keyTyped(KeyEvent e) {
+	switch(e.getKeyCode()) {
+	
+	case KeyEvent.VK_UP:
+		Player.move(Player.Direction.UP);
+		
+		break;
+		
+	case KeyEvent.VK_DOWN:
+		Player.move(Player.Direction.DOWN);
+		break;
+		
+	case KeyEvent.VK_LEFT:
+		Player.move(Player.Direction.LEFT);
+		System.out.println("u");
+		break;
+		
+	case KeyEvent.VK_RIGHT:
+		Player.move(Player.Direction.RIGHT);
+		break;
+	}
+}
+
+
+
+public void keyPressed(KeyEvent e) {}
+
+
+
+public void keyReleased(KeyEvent e) {}
+
+	
+});
 }

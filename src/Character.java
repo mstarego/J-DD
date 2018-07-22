@@ -62,7 +62,7 @@ public abstract class Character {
 	public void increaseYPos(double y) {
 		yPos += y;
 	}
-	public void decreaseyPos(double y) {
+	public void decreaseYPos(double y) {
 		yPos -= y;
 	}
 	public Point getPoint() {
