@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-	
-	
+
 public class Player extends Character {
 	
 	public boolean battleInProgress;
@@ -14,6 +13,9 @@ public class Player extends Character {
 	
 	public enum Class{
 		BARBARIAN, BARD, CLERIC, DRUID, FIGHTER, MONK, PALIDAN, RANGER, ROGUE, SORCERER, WARLOCK, WIZARD
+	}
+	public enum Direction{
+		UP, DOWN, LEFT, RIGHT
 	}
 	
 	public Player(Race r, Class c) {
@@ -79,7 +81,23 @@ public class Player extends Character {
 	
 	
 
-	@Override
+	public void move(Direction d) {
+		switch(d) {
+		
+		case UP:
+			decreaseYPos(getSpeed());
+			break;
+		case DOWN:
+			increaseYPos(getSpeed());
+			break;
+		case LEFT:
+			decreaseXPos(getSpeed());
+			break;
+		case RIGHT:
+			increaseXPos(getSpeed());
+			break;
+		}
+	}
 	public void ability() {
 		// TODO Auto-generated method stub
 		
@@ -241,6 +259,11 @@ public class Player extends Character {
 			+ getWisdom() + "\nCharisma: " + getCharisma());
 	}
 
+
+
+	
+	
+	
 //	public void battle(Monster enemy) {
 //		battleInProgress = true;
 //		System.out.println(getHealth() + "-" + enemy.getHealth() + "-" + getStrength() + "-" + enemy.getStrength());
