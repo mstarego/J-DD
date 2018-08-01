@@ -56,7 +56,7 @@ public abstract class Character {
 	public double getYPos() {
 		return yPos;
 	}
-	public void setYPos(double y) {
+	public  void setYPos(double y) {
 		yPos = y;
 	}
 	public void increaseYPos(double y) {

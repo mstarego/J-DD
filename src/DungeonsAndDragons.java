@@ -7,22 +7,27 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import Player.Direction;
 
 public class DungeonsAndDragons extends JPanel implements KeyListener {
 	private static final int WIDTH = 615;
 	private static final int HEIGHT = 615;
 	public static JFrame frame;
+	public JPanel panel;
 	private Player p1;
 	private GameBoard board;
 	
-	
-	
+	public enum Direction{
+		UP, DOWN, LEFT, RIGHT
+	}
+
 	public DungeonsAndDragons() {
-		
+
 		p1 = new Player(Player.Race.DWARF, Player.Class.BARBARIAN);
 		board = new GameBoard();
-		
+		frame = new JFrame();
+//		for(Space space : GameBoard.spaces) {
+//		}
+
 	}
 
 	public static void main (String[] args) {
@@ -41,7 +46,7 @@ public class DungeonsAndDragons extends JPanel implements KeyListener {
 		// Read saved monsters and NPC's from disk storage
 		// 
 		// End game initialization
-		
+
 		// This is where the main game play scheduler loop would go.
 		// while (1) {
 		//   Loop through player loop looking for keystrokes
@@ -70,13 +75,13 @@ public class DungeonsAndDragons extends JPanel implements KeyListener {
 		// end main gameplay while loop.
 		//
 		// Do end of game maitenance
-        // Save state of all characters
+		// Save state of all characters
 		// Save location and state of all NPC's
 		// Save location and state of all monsters and other characters.
 		// exit;
 	}
-public void paint(Graphics g) {
-		
+	public void paint(Graphics g) {
+
 		Graphics2D g2d = (Graphics2D) g;
 		g2d.setBackground(Color.BLACK);
 		for(Space space : GameBoard.spaces) {
@@ -88,40 +93,60 @@ public void paint(Graphics g) {
 		g2d.setPaint(Color.BLACK);
 		g2d.fillRect((int)(p1.getXPos() - 5), (int)(p1.getYPos() - 5), 10, 10);
 
-		}
-
-addActionListener(new KeyListener{
-	public void keyTyped(KeyEvent e) {
-	switch(e.getKeyCode()) {
-	
-	case KeyEvent.VK_UP:
-		Player.move(Player.Direction.UP);
-		
-		break;
-		
-	case KeyEvent.VK_DOWN:
-		Player.move(Player.Direction.DOWN);
-		break;
-		
-	case KeyEvent.VK_LEFT:
-		Player.move(Player.Direction.LEFT);
-		System.out.println("u");
-		break;
-		
-	case KeyEvent.VK_RIGHT:
-		Player.move(Player.Direction.RIGHT);
-		break;
 	}
-}
+
+	public void keyTyped(KeyEvent e) {
+		System.out.println(":)");
+		switch(e.getKeyCode()) {
+
+		case KeyEvent.VK_UP:
+			move(Direction.UP);
+			repaint();
+			break;
+
+		case KeyEvent.VK_DOWN:
+			move(Direction.DOWN);
+			repaint();
+			break;
+
+		case KeyEvent.VK_LEFT:
+			move(Direction.LEFT);
+			repaint();
+			System.out.println("u");
+			break;
+
+		case KeyEvent.VK_RIGHT:
+			move(Direction.RIGHT);
+			repaint();
+			break;
+		}
+	}
 
 
 
-public void keyPressed(KeyEvent e) {}
+	public void keyPressed(KeyEvent e) {}
 
 
 
-public void keyReleased(KeyEvent e) {}
+	public void keyReleased(KeyEvent e) {}
 
-	
-});
+
+	public void move(Direction d) {
+		switch(d) {
+
+		case UP:
+			p1.decreaseYPos(p1.getSpeed());
+			break;
+		case DOWN:
+			p1.increaseYPos(p1.getSpeed());
+			break;
+		case LEFT:
+			p1.decreaseXPos(p1.getSpeed());
+			break;
+		case RIGHT:
+			p1.increaseXPos(p1.getSpeed());
+			break;
+		}
+	}
+
 }

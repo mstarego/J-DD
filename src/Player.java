@@ -14,9 +14,7 @@ public class Player extends Character {
 	public enum Class{
 		BARBARIAN, BARD, CLERIC, DRUID, FIGHTER, MONK, PALIDAN, RANGER, ROGUE, SORCERER, WARLOCK, WIZARD
 	}
-	public enum Direction{
-		UP, DOWN, LEFT, RIGHT
-	}
+	
 	
 	public Player(Race r, Class c) {
 		super();
@@ -81,23 +79,7 @@ public class Player extends Character {
 	
 	
 
-	public void move(Direction d) {
-		switch(d) {
-		
-		case UP:
-			decreaseYPos(getSpeed());
-			break;
-		case DOWN:
-			increaseYPos(getSpeed());
-			break;
-		case LEFT:
-			decreaseXPos(getSpeed());
-			break;
-		case RIGHT:
-			increaseXPos(getSpeed());
-			break;
-		}
-	}
+	
 	public void ability() {
 		// TODO Auto-generated method stub
 		
